@@ -1,6 +1,6 @@
 variable "aws_region"{
   type = string
-  default = "us-west-1"
+  default = "ca-central-1"
 }
 
 variable "my_instance_type"{
@@ -10,5 +10,15 @@ variable "my_instance_type"{
 
 variable "my_key"{
   type = string
-  default = "Automation1"
+  default = "keypair"
+}
+
+variable "ingressrules" {
+    type = list(number)
+    default = [22,80,443,8080]
+}
+
+variable "egressrules" {
+    type = list(number)
+    default = [80,443,3306,8080]
 }
